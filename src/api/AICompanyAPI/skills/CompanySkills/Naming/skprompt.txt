@@ -1,0 +1,3 @@
+Generate a name for a company given the description of the company
+
+description: {{$input}}

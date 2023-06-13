@@ -1,3 +1,5 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +10,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var kernelConfig = KernelConfig.LoadSettings();
-builder.Services.AddSingleton(kernelConfig);
+builder.Services
+    .AddSingleton(kernelConfig)
+    .AddSingleton<ICompanyRepository, CompanyRepository>()
+    .AddSingleton<ICompanyService, CompanyService>();
 
 var app = builder.Build();
 

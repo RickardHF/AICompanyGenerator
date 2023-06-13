@@ -1,0 +1,5 @@
+Select the two colors that best suits the company to use in their logo based on a description of the company. Give the result in two hexadecimals seperated with a comma.
+
+The output should be like this: "#aaaaaa,#aaaaaa"
+
+description: {{$input}}

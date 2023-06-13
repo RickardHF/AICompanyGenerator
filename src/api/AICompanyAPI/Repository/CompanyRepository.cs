@@ -1,9 +1,4 @@
-﻿using AICompanyAPI.config;
-using AICompanyAPI.Contracts;
-using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.Orchestration;
-using Microsoft.SemanticKernel.SkillDefinition;
-
+﻿
 namespace AICompanyAPI.Repository
 {
     public class CompanyRepository : ICompanyRepository
@@ -17,7 +12,10 @@ namespace AICompanyAPI.Repository
         }
         public async Task<string[]> GetCompanyColors(string input)
         {
-            throw new NotImplementedException();
+            var context = new ContextVariables();
+            context.Set("input", input);
+            var result = await _kernel.RunAsync(context, _skills["Colors"]);
+            return result.Result.Split(",");
         }
 
         public async Task<string> GetCompanyName(string input)
@@ -29,9 +27,14 @@ namespace AICompanyAPI.Repository
             return result.Result;
         }
 
-        public Task<string> GetCompanySlogan(string companyName, string input)
+        public async Task<string> GetCompanySlogan(string companyName, string input)
         {
-            throw new NotImplementedException();
+            var context = new ContextVariables();
+            context.Set("name", companyName);
+            context.Set("input", input);
+            var result = await _kernel.RunAsync(context, _skills["Slogan"]);
+
+            return result.Result;
         }
     }
 }

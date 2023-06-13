@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 public class KernelConfig
 {
-    public const string ConfigFileName = "appsettings.config";
+    public const string ConfigFileName = "appsettings.json";
 
     [JsonPropertyName("ServiceType")]
     public string ServiceType { get; set; } = string.Empty;
@@ -36,10 +36,19 @@ public class KernelConfig
             .AddJsonFile(ConfigFileName)
             .Build();
 
-        var connectionSettings = config["AIConnection"];
-        if (string.IsNullOrEmpty(connectionSettings)) throw new InvalidDataException("Missing the AIConnection settings");
+        // Extract the AIConnection settings
+        var aiConnection = config.GetSection("AIConnection");
+        var kernelConfig = new KernelConfig
+        {
+            ServiceType = aiConnection["ServiceType"],
+            ServiceId = aiConnection["ServiceId"],
+            ModelId = aiConnection["ModelId"],
+            ApiKey = aiConnection["ApiKey"],
+            OrganizationId = aiConnection["OrganizationId"],
+            Endpoint = aiConnection["Endpoint"]
+        };
 
-        return config.GetValue<KernelConfig>("AIConnection");
+        return kernelConfig;
     }
 
 }
