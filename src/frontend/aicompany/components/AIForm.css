@@ -1,0 +1,9 @@
+textarea {
+    color: black;
+    padding: .2rem;
+    border-radius: .4rem;
+    width: 80%;
+    max-width: 800px;
+    min-width: 200px;
+    background-color: var(--background-color);
+}
