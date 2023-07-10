@@ -7,3 +7,9 @@ textarea {
     min-width: 200px;
     background-color: var(--background-color);
 }
+
+.ver-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
