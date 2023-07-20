@@ -11,6 +11,11 @@
 *.sln.docstates
 
 .env
+.env*
+
+package-lock.json
+.node
+.node/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

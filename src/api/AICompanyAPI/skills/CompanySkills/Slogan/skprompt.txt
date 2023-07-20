@@ -1,4 +1,0 @@
-Generate a slogan for a company given the description and name of the company
-
-name: {{$name}}
-description: {{$input}}
