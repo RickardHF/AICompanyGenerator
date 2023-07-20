@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./AIForm.css";
 import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/pages/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
+import Loading from "./Loading";
 
 function AIForm() {
     const [description, setDescription] = useState("");
@@ -12,7 +13,7 @@ function AIForm() {
     const [slogan, setSlogan] = useState("");
     const [colors, setColors] = useState(["#000000", "#FFFFFF"]);
     const [showAnswer, setShowAnswer] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [colorError, setColorError] = useState(false);
 
     async function generate(e: React.FormEvent<HTMLFormElement>) {
@@ -71,9 +72,8 @@ function AIForm() {
                         <p>{slogan}</p>
 
                         <h2>Company Colors</h2>
-                        <p>{colors}</p>
 
-                        <div>
+                        <div className="color-container">
                             {colors.map((color, index) => {
                                 return <ColorSquare key={index} color={color} size={50} onClick={() => {navigator.clipboard.writeText(color)}} />;
                             })}
@@ -81,6 +81,7 @@ function AIForm() {
                     </div>
                 </div>
             }
+            <Loading loading={loading} />
         </div>
     );
 }

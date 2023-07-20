@@ -1,4 +1,5 @@
 import React from 'react';
+import './ColorSquare.tsx.css';
 
 interface ColorSquareProps {
     color: string;
@@ -14,7 +15,10 @@ const ColorSquare : React.FC<ColorSquareProps> = ({ color, size, onClick }) => {
     };
 
     return (
-        <div className='color-square' style={style} onClick={onClick}></div>
+        <div className='color-square-container'  onClick={onClick}>
+            <div className='color-square' style={style}></div>
+            <p>{color}</p>
+        </div>
     );
 };
 

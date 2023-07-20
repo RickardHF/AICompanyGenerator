@@ -17,6 +17,7 @@ textarea {
 
 .form-area {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -32,4 +33,11 @@ textarea {
 .form-area-element {
     padding-top: .5rem;
     padding-bottom: .5rem;
+}
+
+.color-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
