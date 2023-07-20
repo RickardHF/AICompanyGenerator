@@ -13,7 +13,7 @@ function AIForm() {
     const [slogan, setSlogan] = useState("");
     const [colors, setColors] = useState(["#000000", "#FFFFFF"]);
     const [showAnswer, setShowAnswer] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [colorError, setColorError] = useState(false);
 
     async function generate(e: React.FormEvent<HTMLFormElement>) {

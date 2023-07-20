@@ -14,3 +14,18 @@
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
+
+.loading-spinner {
+  width: 5rem;
+  height: 5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
