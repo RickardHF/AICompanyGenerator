@@ -5,8 +5,22 @@ textarea {
     width: 80%;
     max-width: 800px;
     min-width: 200px;
+    height: 200px;
     background-color: var(--background-color);
     border: 1px solid var(--foreground-rgb);
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    text-align: center;
+    color: var(--background-color-strong);
+    filter: 
+    drop-shadow(0.2rem 0.2rem 0.15rem var(--button-background-one))
+    drop-shadow(-0.2rem -0.2rem 0.15rem var(--button-background-two))
+        ;
 }
 
 .ver-flex {
@@ -35,9 +49,52 @@ textarea {
     padding-bottom: .5rem;
 }
 
+.form-area-element h2 {
+    padding-right: .5rem;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 0;
+    padding-bottom: 1rem;
+}
+
 .color-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.generate-button {
+    border: 1px solid var(--background-color-strong);
+    margin: .3rem;
+    padding: .3rem;
+    border-radius: .4rem;
+    background: linear-gradient(to right, var(--button-background-one), var(--button-background-two));
+    color: var(--background-color-strong);
+    filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--foreground-rgb));
+
+    &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0.2rem 0.2rem 0.4rem var(--foreground-rgb));
+    }
+
+    &:active {
+        filter: drop-shadow(0.2rem 0.2rem 0.1rem var(--foreground-rgb));
+        background: linear-gradient(to right, var(--background-start-rgb), var(--button-end-rgb));
+    }
+}
+
+
+/* if on mobile */
+
+@media (max-width: 680px) {
+    .form-area {
+        width: 100%;
+    }
 }

@@ -39,14 +39,14 @@ function AIForm() {
         setLoading(false);
     };
 
-    function isValidColor(colorCode: string) : boolean {
+    function isValidColor(colorCode: string): boolean {
         return /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(colorCode);
     }
 
-    function handleColors(colorString: string) : void {
+    function handleColors(colorString: string): void {
         try {
             const colors = colorString.split(",");
-            if(! colors.every(isValidColor)) {
+            if (!colors.every(value => isValidColor(value.trim()))) {
                 throw new Error("Invalid color code");
             }
             setColors(colors);
@@ -58,6 +58,8 @@ function AIForm() {
 
     return (
         <div className="w-full form-area">
+            <h1>Company Name Generator</h1>
+            <h3>Powered by AI</h3>
             <form onSubmit={generate} className='flex w-full ver-flex form-area-element'>
                 <textarea id="description" placeholder='Describe your company...' value={description} onChange={(event) => setDescription(event.target.value)} />
                 <button className="generate-button" type="submit">Generate</button>
@@ -75,7 +77,7 @@ function AIForm() {
 
                         <div className="color-container">
                             {colors.map((color, index) => {
-                                return <ColorSquare key={index} color={color} size={50} onClick={() => {navigator.clipboard.writeText(color)}} />;
+                                return <ColorSquare key={index} color={color} size={50} onClick={() => { navigator.clipboard.writeText(color) }} />;
                             })}
                         </div>
                     </div>

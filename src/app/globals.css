@@ -7,8 +7,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --background-color: #FFFFFFAA;
+  --background-color-strong: #FFFFFF;
   --background-start-rgb: #15a9ff55;
   --background-end-rgb: #f7368655;
+  --button-background-one: #15a9ff;
+  --button-background-two: #f73686;
 }
 
 body {
@@ -22,9 +25,26 @@ body {
     var(--background-start-rgb);
 }
 
+main {
+  position: relative;
+}
+
 .welcome-box {
   display: flex;
   background-color: var(--background-color);
   border-radius: 0.4rem;
   padding: 0.2rem;
+}
+
+.by-item {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+
+@media (max-width: 680px) {
+  main {
+    padding: 0.5rem;
+  }
 }
