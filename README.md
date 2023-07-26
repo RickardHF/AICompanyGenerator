@@ -1,37 +1,38 @@
 # AICompanyGenerator
 
-# Frontend
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Welcome to the AICompanyGenerator repo. 
 
-## Getting Started
+# What is this?
 
-First, run the development server:
+This is a singlepage application which uses calls to the Open AI API to generate suggestions for name of a company, its slogan and two colors that can be used in its logo or other. 
 
-```bash
+I created this project both to learn more about React, but mainly in order to learn more about promt engineering. 
+
+# Parts to Pay Attention to
+
+The main component, that handles user input and displays the output is in the file ```./src/components/AIForm.tsx```. If you want to learn more about how it works or want to make any changes, go here.
+
+The API calls themselves are located in ```./src/pages/api/openaiCommunicator.tsx```. Here you can see how the AI model was instructed to handle and respond to the input.
+
+# How to run
+
+First clone this repo to your local machine. Open terminal/bash/powershell in the root folder and go to the ```src``` folder.
+
+From there install all packages and run the project. 
+
+```powershell
+cd ./src
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What you need 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We use the OpenAI API. In order to use this you need to create your own subscription in order to get keys to be able to access the api. More information about the API etc. can be found [here](https://platform.openai.com/docs/api-reference/introduction).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In order to successfully run this you need to create a local environment file ```.env.local``` with the following content.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```env
+NEXT_PUBLIC_OPENAI_API_KEY=<Your OpenAi API Key>
+NEXT_PUBLIC_OPENAI_ORG_ID=<Your OpenAI organization Id>
+```
