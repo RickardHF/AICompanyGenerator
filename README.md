@@ -14,7 +14,7 @@ The main component, that handles user input and displays the output is in the fi
 
 The API calls themselves are located in ```./src/pages/api/openaiCommunicator.tsx```. Here you can see how the AI model was instructed to handle and respond to the input.
 
-# How to run
+# :runner: How to run 
 
 First clone this repo to your local machine. Open terminal/bash/powershell in the root folder and go to the ```src``` folder.
 
