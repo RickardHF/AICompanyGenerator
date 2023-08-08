@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import "./AIForm.css";
-import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/pages/api/openaiCommunicator";
+import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
 
@@ -57,7 +57,7 @@ function AIForm() {
     }
 
     return (
-        <div className="w-full form-area">
+        <div className="w-full form-area content-box">
             <h1>Company Name Generator</h1>
             <h3>Powered by AI</h3>
             <form onSubmit={generate} className='flex w-full ver-flex form-area-element'>

@@ -1,5 +1,7 @@
+import Footer from '@/components/Footer'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,13 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="flex min-h-screen flex-col items-center justify-center">
+      <body className={inter.className + " min-h-screen flex flex-col justify-center space-between font-mono"}>
+        <Header />
+        <main className="flex flex-col items-center justify-center">
           {children}
         </main>
-        <footer>
-          <p>@2021</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   )
