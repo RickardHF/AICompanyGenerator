@@ -10,19 +10,6 @@ textarea {
     border: 1px solid var(--foreground-rgb);
 }
 
-h1 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    margin-bottom: .5rem;
-    text-align: center;
-    color: var(--background-color-strong);
-    filter: 
-    drop-shadow(0.2rem 0.2rem 0.15rem var(--button-background-one))
-    drop-shadow(-0.2rem -0.2rem 0.15rem var(--button-background-two))
-        ;
-}
-
 .ver-flex {
     flex-direction: column;
     justify-content: center;
@@ -30,20 +17,6 @@ h1 {
 }
 
 .form-area {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 800px;
-    min-width: 200px;
-    margin: 0 auto;
-    background-color: var(--background-color);
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-    border-radius: .4rem;
 }
 
 .form-area-element {
@@ -56,13 +29,6 @@ h1 {
     font-size: large;
     font-weight: bold;
     margin-top: 1rem;
-}
-
-h3 {
-    font-size: medium;
-    font-weight: bold;
-    margin-top: 0;
-    padding-bottom: 1rem;
 }
 
 .color-container {
@@ -89,14 +55,5 @@ h3 {
     &:active {
         filter: drop-shadow(0.2rem 0.2rem 0.1rem var(--foreground-rgb));
         background: linear-gradient(to right, var(--background-start-rgb), var(--button-end-rgb));
-    }
-}
-
-
-/* if on mobile */
-
-@media (max-width: 680px) {
-    .form-area {
-        width: 100%;
     }
 }
