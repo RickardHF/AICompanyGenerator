@@ -1,5 +1,5 @@
 
-.color-square-container {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
     padding: .5rem;
 }
 
-.color-square-container:hover {
+.container:hover {
     cursor: pointer;
     
     .color-square {
@@ -15,7 +15,7 @@
     }
 }
 
-.color-square {
+.square {
     border-radius: .5rem;
     border: var(--background-color) solid .1rem;
     filter: drop-shadow(0.1rem 0.1rem .2rem var(--foreground-rgb));
