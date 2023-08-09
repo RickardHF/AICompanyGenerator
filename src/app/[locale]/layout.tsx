@@ -8,8 +8,9 @@ import {notFound} from 'next/navigation';
 
 // Test Start
 import {NextIntlClientProvider} from 'next-intl';
+
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'de'}];
+  return [{locale: 'en'}, {locale: 'no'}];
 }
 // Test Stop
 
