@@ -29,7 +29,14 @@ export default async function RootLayout({
   children: React.ReactNode,
   params: any
 }) {
-  const locale = useLocale();
+  let locale;
+  
+  try {
+    locale = useLocale();
+  } catch (error) {
+    console.error(error);
+    notFound();
+  }
 
   if (params.locale !== locale) {
     notFound();
