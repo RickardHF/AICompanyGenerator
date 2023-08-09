@@ -2,7 +2,7 @@
 
 
 const nextConfig = {
-    //output: "standalone"
+    output: "standalone"
 }
 
 const withNextIntl = require('next-intl/plugin')(
