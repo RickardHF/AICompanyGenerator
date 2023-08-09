@@ -1,0 +1,26 @@
+{
+    "links": {
+        "home": "Hjem",
+        "about": "Om Applikasjonen"
+    },
+    "common": {
+        "name": "Bedriftsnavngenerator"
+    },
+    "about": {
+        "about-title": "Om Applikasjonen",
+        "about-content": "Bedriftsnavngenerator er en brukervennlig webapplikasjon som utnytter kraften i AI for å gi tankefulle og personlige bedriftsnavn og slagordforslag. Ved å bare legge inn en bedriftsbeskrivelse, kan brukere enkelt utforske kreative og relevante merkeidentiteter som samsvarer med deres visjon.",
+        "app-title": "Vil du lage din egen app?",
+        "app-content-1": "Om du er interessert i hvordan denne appen er laget, sjekk ut dette ",
+        "app-content-2": " hvor du kan finne kildekoden til denne applikasjonen og lett komme i gang ved å bruke den som en mal for en AI-applikasjon. Der vil du finne dokumentasjon om hvordan du kommer i gang, og hvordan du setter den opp for din egen bruk."
+    },
+    "home": {
+        "powered": "Drevet av AI",
+        "promt": "Beskriv din bedrift...",
+        "generate": "Generer",
+        "company": {
+            "name": "Bedriftsnavn",
+            "slogan": "Bedriftens Slagord",
+            "colors": "Bedriftens Farger"
+        }
+    }
+}

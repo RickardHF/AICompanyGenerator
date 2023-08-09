@@ -91,6 +91,10 @@ h3 {
   border-radius: .4rem;
 }
 
+.svg-icon {
+  fill: var(--background-color-strong);
+}
+
 .welcome-box {
   display: flex;
   background-color: var(--background-color);

@@ -1,5 +1,5 @@
 import React from 'react'
-import AIForm from '../components/AIForm'
+import AIForm from '@/components/AIForm'
 
 export default function Home() {
 

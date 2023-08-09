@@ -1,0 +1,26 @@
+{
+    "links": {
+        "home": "Home",
+        "about": "About"
+    },
+    "common": {
+        "name": "AI Company Generator"
+    },
+    "about": {
+        "about-title": "About",
+        "about-content": "Company Generator is a user-friendly web application that harnesses the power of AI to provide thoughtful and personalized company naming and slogan suggestions. By simply inputting a company description, users can effortlessly explore creative and relevant brand identities that align with their vision.",
+        "app-title": "Want to create your own app?",
+        "app-content-1": "If you are interested in how this app is made, check out this ",
+        "app-content-2": " where you can find the source code of this application and easily get started by using it as an template for an AI application. There you will find documentation on how to get started, and how to set it up for your own use."
+    },
+    "home": {
+        "powered": "Powered by AI",
+        "promt": "Describe your company...",
+        "generate": "Generate",
+        "company": {
+            "name": "Company Name",
+            "slogan": "Company Slogan",
+            "colors": "Company Colors"
+        }
+    }
+}

@@ -5,6 +5,7 @@ import "./AIForm.css";
 import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
+import {useTranslations} from 'next-intl'
 
 function AIForm() {
     const [description, setDescription] = useState("");
@@ -15,6 +16,9 @@ function AIForm() {
     const [showAnswer, setShowAnswer] = useState(false);
     const [loading, setLoading] = useState(false);
     const [colorError, setColorError] = useState(false);
+
+    const common_names = useTranslations('common');
+    const home_names = useTranslations('home');
 
     async function generate(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -58,22 +62,22 @@ function AIForm() {
 
     return (
         <div className="w-full form-area content-box">
-            <h1>Company Name Generator</h1>
-            <h3>Powered by AI</h3>
+            <h1>{common_names("name")}</h1>
+            <h3>{home_names("powered")}</h3>
             <form onSubmit={generate} className='flex w-full ver-flex form-area-element'>
-                <textarea id="description" placeholder='Describe your company...' value={description} onChange={(event) => setDescription(event.target.value)} />
-                <button className="generate-button" type="submit">Generate</button>
+                <textarea id="description" placeholder={home_names("promt")} value={description} onChange={(event) => setDescription(event.target.value)} />
+                <button className="generate-button" type="submit">{home_names("generate")}</button>
             </form>
             {showAnswer &&
                 <div className='flex w-full ver-flex form-area-element'>
                     <div className='flex w-full ver-flex'>
-                        <h2>Company Name</h2>
+                        <h2>{home_names("company.name")}</h2>
                         <p>{name}</p>
 
-                        <h2>Company Slogan</h2>
+                        <h2>{home_names("company.slogan")}</h2>
                         <p>{slogan}</p>
 
-                        <h2>Company Colors</h2>
+                        <h2>{home_names("company.colors")}</h2>
 
                         <div className="color-container">
                             {colors.map((color, index) => {
