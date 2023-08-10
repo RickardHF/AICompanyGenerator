@@ -1,8 +1,15 @@
-import { useTranslations } from "next-intl";
+'use client'
+
+import { useSearchParams } from "next/navigation";
+
+const { getSection } = require("@/messages/lang-support");
 
 export default function Header() {
 
-    const link_names = useTranslations('links');
+    const params = useSearchParams();
+    const lang = params.get("lang") ?? "xx";
+
+    const link_names = getSection(lang, 'links');
     
     return (<header className="flex w-full hor-flex justify-center items-center">
         <div className="content-container flex w-full hor-flex space-between items-center">

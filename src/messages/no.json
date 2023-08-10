@@ -17,10 +17,8 @@
         "powered": "Drevet av AI",
         "promt": "Beskriv din bedrift...",
         "generate": "Generer",
-        "company": {
-            "name": "Bedriftsnavn",
-            "slogan": "Bedriftens Slagord",
-            "colors": "Bedriftens Farger"
-        }
+        "company-name": "Bedriftsnavn",
+        "company-slogan": "Bedriftens Slagord",
+        "company-colors": "Bedriftens Farger"
     }
 }

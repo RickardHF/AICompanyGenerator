@@ -17,10 +17,8 @@
         "powered": "Powered by AI",
         "promt": "Describe your company...",
         "generate": "Generate",
-        "company": {
-            "name": "Company Name",
-            "slogan": "Company Slogan",
-            "colors": "Company Colors"
-        }
+        "company-name": "Company Name",
+        "company-slogan": "Company Slogan",
+        "company-colors": "Company Colors"
     }
 }

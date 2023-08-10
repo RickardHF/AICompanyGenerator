@@ -5,9 +5,14 @@ import "./AIForm.css";
 import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
-import {useTranslations} from 'next-intl'
+import { useSearchParams } from "next/navigation";
+const { getSection } = require('@/messages/lang-support');
 
 function AIForm() {
+    
+    const params = useSearchParams();
+    const lang = params.get("lang") ?? "xx";
+
     const [description, setDescription] = useState("");
 
     const [name, setName] = useState("");
@@ -17,8 +22,8 @@ function AIForm() {
     const [loading, setLoading] = useState(false);
     const [colorError, setColorError] = useState(false);
 
-    const common_names = useTranslations('common');
-    const home_names = useTranslations('home');
+    const common_names = getSection(lang, 'common');
+    const home_names = getSection(lang, 'home');
 
     async function generate(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -71,13 +76,13 @@ function AIForm() {
             {showAnswer &&
                 <div className='flex w-full ver-flex form-area-element'>
                     <div className='flex w-full ver-flex'>
-                        <h2>{home_names("company.name")}</h2>
+                        <h2>{home_names("company-name")}</h2>
                         <p>{name}</p>
 
-                        <h2>{home_names("company.slogan")}</h2>
+                        <h2>{home_names("company-slogan")}</h2>
                         <p>{slogan}</p>
 
-                        <h2>{home_names("company.colors")}</h2>
+                        <h2>{home_names("company-colors")}</h2>
 
                         <div className="color-container">
                             {colors.map((color, index) => {

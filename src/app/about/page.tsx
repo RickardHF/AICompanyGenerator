@@ -1,8 +1,15 @@
-import { useTranslations } from "next-intl";
+'use client'
+
+const { getSection } = require('@/messages/lang-support');
+import { useSearchParams } from 'next/navigation';
 
 export default function About() {
-    const  common_text  = useTranslations('common');
-    const  about_text  = useTranslations('about');
+
+    const params = useSearchParams();
+    const lang = params.get("lang") ?? "xx";
+
+    const  common_text  = getSection(lang, 'common');
+    const  about_text  = getSection(lang, 'about');
 
     return (<div className="content-box">
         <h1>{common_text("name")}</h1>
