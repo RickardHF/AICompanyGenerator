@@ -34,6 +34,7 @@ export default function Header() {
                 supportedLanguages.map((language:string) => {
                     return (
                         <Link
+                            key={language}
                             className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one px-2 hover:underline" 
                             href={{query: {lang: language}}}
                             >

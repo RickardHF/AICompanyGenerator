@@ -20,6 +20,9 @@ export default async function RootLayout({
 
   return (
     <html>
+      <head>
+        <link rel="icon" href="/icon.jpg" />
+      </head>
       <body className={inter.className + " min-h-screen flex flex-col justify-center space-between font-mono"}>
         <Header />
         <main className="flex flex-col items-center justify-center">
