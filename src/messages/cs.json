@@ -1,0 +1,25 @@
+{
+    
+    "links": {
+        "home": "Doma",
+        "about": "O aplikácii"
+    },
+    "common": {
+        "name": "Generátor Názvu Společnosti"
+    },
+    "about": {
+        "about-title": "O Aplikaci",
+        "about-content": "Generator Názvu Společnosti je uživatelsky přívětivá webová aplikace, která využívá sílu umělé inteligence k poskytování promyšlených a personalizovaných návrhů názvů a sloganů společností. Stačí zadat popis společnosti a uživatelé mohou snadno prozkoumat kreativní a relevantní identitu značky, která souhlasí s jejich vizí.",
+        "app-title": "Chcte si vytvoriť vlastní aplikácii?",
+        "app-content-1": "Jestli vás zajímá, jak je tato aplikace vytvořena, podívejte se na tuto ",
+        "app-content-2": " kde naleznete zdrojový kód této aplikace a snadno začnete používat jako šablonu pro aplikaci AI. Naleznete tam dokumentaci o tom, jak začít a jak ji nastavit pro vlastní použití."
+    },
+    "home": {
+        "powered": "Powered by AI",
+        "promt": "Dejte popis své společnosti...",
+        "generate": "Generatovat",
+        "company-name": "Jmeno Společnosti",
+        "company-slogan": "Slogan Společnosti",
+        "company-colors": "Barvy Společnosti"
+    }
+}

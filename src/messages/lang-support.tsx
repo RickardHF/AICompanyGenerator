@@ -1,4 +1,4 @@
-const langs = ["en", "no"];
+const langs = ["en", "no", "cs"];
 const defaultLanguage = "en";
 
 interface Messages {
@@ -19,3 +19,4 @@ function getSection(lang:string, section:string): (section:string) => string {
 } 
 
 module.exports.getSection = getSection;
+module.exports.supportedLanguages = langs;
