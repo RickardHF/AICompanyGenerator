@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.companygenerator.xyz/sitemap.xml
+Sitemap: https://companygenerator.xyz/sitemap.xml
