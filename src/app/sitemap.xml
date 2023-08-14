@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.companygenerator.xyz/</loc>
+    <loc>https://companygenerator.xyz/</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/?lang=en</loc>
+    <loc>https://companygenerator.xyz/?lang=en</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/?lang=no</loc>
+    <loc>https://companygenerator.xyz/?lang=no</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/?lang=cs</loc>
+    <loc>https://companygenerator.xyz/?lang=cs</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/about</loc>
+    <loc>https://companygenerator.xyz/about</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/about?lang=en</loc>
+    <loc>https://companygenerator.xyz/about?lang=en</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/about?lang=no</loc>
+    <loc>https://companygenerator.xyz/about?lang=no</loc>
   </url>
   <url>
-    <loc>https://www.companygenerator.xyz/about?lang=cs</loc>
+    <loc>https://companygenerator.xyz/about?lang=cs</loc>
   </url>
 </urlset>
