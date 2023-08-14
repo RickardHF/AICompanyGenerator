@@ -67,6 +67,7 @@ h1 {
   drop-shadow(0.2rem 0.2rem 0.15rem var(--button-background-one))
   drop-shadow(-0.2rem -0.2rem 0.15rem var(--button-background-two))
       ;
+  user-select: none;
 }
 
 h3 {
@@ -74,6 +75,7 @@ h3 {
     font-weight: bold;
     margin-top: 0;
     padding-bottom: 1rem;
+    user-select: none;
 }
 
 .content-box {
