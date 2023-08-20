@@ -8,12 +8,13 @@
 }
 
 .container:hover {
-    cursor: pointer;
-    
-    .color-square {
-        border: var(--foreground-rgb) solid .1rem;
-    }
+    cursor: pointer;    
 }
+
+.container:hover .color-square {
+    border: var(--foreground-rgb) solid .1rem;
+}
+
 
 .square {
     border-radius: .5rem;

@@ -9,7 +9,9 @@ import { useSearchParams } from "next/navigation";
 const { getSection } = require('@/messages/lang-support');
 
 function AIForm() {
-    
+
+    const affiliate_link = process.env.NEXT_PULBLIC_NAMECHEAP_AFFILIATE_LINK ?? "https://namecheap.com/";
+
     const params = useSearchParams();
     const lang = params.get("lang") ?? "xx";
 
@@ -78,6 +80,7 @@ function AIForm() {
                     <div className='flex w-full ver-flex'>
                         <h2>{home_names("company-name")}</h2>
                         <p>{name}</p>
+                        <p className="referal">Get started by creating a webpage! <a href={affiliate_link} target="_blank" rel="noopener noreferrer">Get yourself a domain here</a></p>
 
                         <h2>{home_names("company-slogan")}</h2>
                         <p>{slogan}</p>

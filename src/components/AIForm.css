@@ -38,6 +38,20 @@ textarea {
     align-items: center;
 }
 
+.referal {
+    font-size: small;
+}
+
+.referal a {
+    text-decoration: underline;
+    color: var(--button-background-one);
+}
+
+.referal a:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .generate-button {
     border: 1px solid var(--background-color-strong);
     margin: .3rem;
