@@ -10,7 +10,7 @@ const { getSection } = require('@/messages/lang-support');
 
 function AIForm() {
 
-    const affiliate_link = process.env.NEXT_PULBLIC_NAMECHEAP_AFFILIATE_LINK ?? "https://namecheap.com/";
+    const affiliate_link = process.env.NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK ?? "https://namecheap.com/";
 
     const params = useSearchParams();
     const lang = params.get("lang") ?? "xx";
