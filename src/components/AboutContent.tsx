@@ -1,9 +1,11 @@
 'use client'
 
+import useLanguageSetter from "@/messages/html-language-setter";
 import useTranslationsFetcher from "@/messages/tranlations-fetcher";
 
 export default function AboutContent() {
     const tranlations = useTranslationsFetcher();
+    useLanguageSetter();
 
     const common_text = tranlations('common');
     const about_text = tranlations('about');

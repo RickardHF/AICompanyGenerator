@@ -28,6 +28,7 @@ function getSection(lang:string, section:string): (section:string) => string {
 
 function setHtmlLanguage(lang:string) {
     if (! checkIfLanguageSupported(lang)) lang = config.default;
+    console.log("Setting html language to", lang);
     document.documentElement.lang = lang;
 }
 
