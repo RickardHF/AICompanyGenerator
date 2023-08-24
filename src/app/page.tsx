@@ -1,14 +1,14 @@
 import React from 'react'
 import AIForm from '@/components/AIForm'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 import { createMetadataGenerator, Props } from '@/messages/helpers/metadata-generator'
 
 const metadata_function = createMetadataGenerator("home-title", "home-description")
 
 export async function generateMetadata(
-  { params, searchParams } : Props, parent?:ResolvingMetadata
+  { params, searchParams } : Props
 ) : Promise<Metadata> {
-  return metadata_function({ params, searchParams }, parent);
+  return metadata_function({ params, searchParams });
 }
 
 export default function Home() {
