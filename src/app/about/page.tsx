@@ -1,15 +1,12 @@
 'use client'
 
-const { getSection } = require('@/messages/lang-support');
-import { useSearchParams } from 'next/navigation';
+import useTranslationsFetcher from '@/messages/tranlations-fetcher';
 
 export default function About() {
+    const tranlations = useTranslationsFetcher();
 
-    const params = useSearchParams();
-    const lang = params.get("lang") ?? "xx";
-
-    const  common_text  = getSection(lang, 'common');
-    const  about_text  = getSection(lang, 'about');
+    const  common_text  = tranlations('common');
+    const  about_text  = tranlations('about');
 
     return (<div className="content-box">
         <h1>{common_text("name")}</h1>

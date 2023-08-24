@@ -1,65 +1,50 @@
 'use client'
 
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import LanguageSwitcher from "@/messages/components/LanguageSwitcher";
+import LocalizedLink from "@/messages/components/LocalizedLink";
+import Language from "@/messages/interfaces/Language";
+import useTranslationsFetcher from "@/messages/tranlations-fetcher";
 
-const { getSection, supportedLanguages } = require("@/messages/lang-support");
+const { supportedLanguages } = require("@/messages/lang-support");
 
 export default function Header() {
 
-    const params = useSearchParams();
-    const lang = params.get("lang") ?? "xx";
+    const tranlations = useTranslationsFetcher();
+    const link_names = tranlations("links");
 
-    const link_names = getSection(lang, 'links');
-
-    const home_link = {
-        pathname: "/",
-        query: {}
-    }
-
-    const about_link = {
-        pathname: "/about",
-        query: {}
-    }
-
-    if (lang !== "xx") {
-        home_link.query = { lang: lang }
-        about_link.query = { lang: lang }
-    }
-    
     return (
     <header className="flex w-full ver-flex justify-center items-center">
         <div className="flex w-full hor-flex justify-end px-10">
             {
-                supportedLanguages.map((language:string) => {
+                supportedLanguages.map((language:Language) => {
                     return (
-                        <Link
-                            key={language}
+                        <LanguageSwitcher
+                            key={language.code}
                             className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one px-2 hover:underline" 
-                            href={{query: {lang: language}}}
+                            lang={language.code}
                             >
                                 <h2
                                     className="px-2"
-                                >{language}</h2>
-                        </Link>
+                                >{language.name}</h2>
+                        </LanguageSwitcher>
                     )
                 })
             }
         </div>
         <div className="flex hor-flex justify-around w-1/2 items-center px-8 py-4 min-w-[300px] max-w-full">
-            <Link 
-                href={home_link}
+            <LocalizedLink 
+                href="/"
                 className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one hover:underline"
                 >
                 <h2>{link_names("home")}</h2>
-            </Link>
+            </LocalizedLink>
 
-            <Link
-                href={about_link}
+            <LocalizedLink
+                href="/about"
                 className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one hover:underline"
             >
                 <h2>{link_names("about")}</h2>
-            </Link>
+            </LocalizedLink>
         </div>
     </header>
     );

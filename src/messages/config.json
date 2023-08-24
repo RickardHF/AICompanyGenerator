@@ -1,0 +1,17 @@
+{
+    "default": "en",
+    "languages": [
+        {
+            "code": "en",
+            "name": "English"
+        },
+        {
+            "code": "no",
+            "name": "Norsk"
+        },
+        {
+            "code": "cs",
+            "name": "Češtisna"
+        }
+    ]
+}

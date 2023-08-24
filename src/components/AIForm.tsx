@@ -5,15 +5,13 @@ import "./AIForm.css";
 import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
-import { useSearchParams } from "next/navigation";
-const { getSection } = require('@/messages/lang-support');
+import useTranslationsFetcher from "@/messages/tranlations-fetcher";
 
 function AIForm() {
 
     const affiliate_link = process.env.NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK ?? "https://namecheap.com/";
 
-    const params = useSearchParams();
-    const lang = params.get("lang") ?? "xx";
+    const tranlations = useTranslationsFetcher();
 
     const [description, setDescription] = useState("");
 
@@ -24,8 +22,8 @@ function AIForm() {
     const [loading, setLoading] = useState(false);
     const [colorError, setColorError] = useState(false);
 
-    const common_names = getSection(lang, 'common');
-    const home_names = getSection(lang, 'home');
+    const common_names = tranlations('common');
+    const home_names = tranlations('home');
 
     async function generate(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
