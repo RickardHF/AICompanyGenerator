@@ -33,4 +33,5 @@ function setHtmlLanguage(lang:string) {
 
 module.exports.getSection = getSection;
 module.exports.setHtmlLanguage = setHtmlLanguage;
+module.exports.configuration = config;
 module.exports.supportedLanguages = config.languages;

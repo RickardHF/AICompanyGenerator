@@ -21,5 +21,11 @@
         "company-name": "Jmeno Společnosti",
         "company-slogan": "Slogan Společnosti",
         "company-colors": "Barvy Společnosti"
+    },
+    "metadata": {
+        "home-title": "Generator Názvu Společnosti - AI Powered",
+        "home-description": "Generator Názvu Společnosti je uživatelsky přívětivá webová aplikace, která využívá sílu umělé inteligence k poskytování promyšlených a personalizovaných návrhů názvů a sloganů společností.",
+        "about-title": "O Aplikaci - Generator Názvu Společnosti",
+        "about-description": "Dozvědět se více o naší aplikaci na generování názvů a sloganů společností poháněných umělou inteligencí. Zjistěte, jak funguje a jak ji můžete použít k vytvoření vlastní aplikace poháněné umělou inteligencí."
     }
 }

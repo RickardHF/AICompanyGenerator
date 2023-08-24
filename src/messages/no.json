@@ -20,5 +20,11 @@
         "company-name": "Bedriftsnavn",
         "company-slogan": "Bedriftens Slagord",
         "company-colors": "Bedriftens Farger"
+    },
+    "metadata": {
+        "home-title": "Bedriftsnavn- og slagordgenerator",
+        "home-description": "Vår AI-drevne bedriftsnavn- og slagordgenerator vil hjelpe deg med å finne det perfekte navnet for din bedrift. Alt du trenger å gjøre er å beskrive din bedrift og generator tar det derfra.",
+        "about-title": "Om - Bedriftsnavn- og slagordgenerator",
+        "about-description": "Lær mer om vår AI-drevne bedriftsnavn- og slagordgenerator. Finn ut hvordan den fungerer og hvordan du kan bruke den til å lage din egen AI-drevne applikasjon."
     }
 }
