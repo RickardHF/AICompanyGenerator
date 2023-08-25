@@ -1,11 +1,13 @@
 'use client'
 
 import useLanguageSetter from "@/messages/html-language-setter";
+import useMetadataSetter from "@/messages/mnetadata-setter";
 import useTranslationsFetcher from "@/messages/tranlations-fetcher";
 
 export default function AboutContent() {
     const tranlations = useTranslationsFetcher();
     useLanguageSetter();
+    useMetadataSetter("about-title", "about-description");
 
     const common_text = tranlations('common');
     const about_text = tranlations('about');

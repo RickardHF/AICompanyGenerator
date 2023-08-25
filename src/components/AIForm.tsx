@@ -7,6 +7,7 @@ import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
 import useTranslationsFetcher from "@/messages/tranlations-fetcher";
 import useLanguageSetter from "@/messages/html-language-setter";
+import useMetadataSetter from "@/messages/mnetadata-setter";
 
 function AIForm() {
 
@@ -14,6 +15,7 @@ function AIForm() {
 
     const tranlations = useTranslationsFetcher();
     useLanguageSetter();
+    useMetadataSetter("home-title", "home-description");
     
 
     const [description, setDescription] = useState("");
