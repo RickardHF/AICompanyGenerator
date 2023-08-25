@@ -6,12 +6,17 @@ import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openai
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
 import useTranslationsFetcher from "@/messages/tranlations-fetcher";
+import useLanguageSetter from "@/messages/html-language-setter";
+import useMetadataSetter from "@/messages/mnetadata-setter";
 
 function AIForm() {
 
     const affiliate_link = process.env.NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK ?? "https://namecheap.com/";
 
     const tranlations = useTranslationsFetcher();
+    useLanguageSetter();
+    useMetadataSetter("home-title", "home-description");
+    
 
     const [description, setDescription] = useState("");
 

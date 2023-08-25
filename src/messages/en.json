@@ -20,5 +20,11 @@
         "company-name": "Company Name",
         "company-slogan": "Company Slogan",
         "company-colors": "Company Colors"
+    },
+    "metadata": {
+        "home-title": "Company Name and Slogan Generator - Powered by AI",
+        "home-description": "Our AI-powered company name and slogan generator will help you find the perfect name for your business. All you need to do is describe your business and the generator takes it from there",
+        "about-title": "About - Company Name and Slogan Generator",
+        "about-description": "Learn more about our AI-powered company name and slogan generator. Find out how it works and how you can use it to create your own AI-powered application."
     }
 }
