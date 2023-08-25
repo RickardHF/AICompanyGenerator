@@ -22,7 +22,6 @@ function getSection(lang:string, section:string): (section:string) => string {
         if (! translation) return undefined;
         const selected_section = translation[section];
         if (! selected_section) return undefined;
-        console.log(selected_section[key])
         return selected_section[key];
     }  
 }
