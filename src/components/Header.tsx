@@ -1,11 +1,9 @@
 'use client'
 
-import LanguageSwitcher from "@/messages/components/LanguageSwitcher";
-import LocalizedLink from "@/messages/components/LocalizedLink";
-import Language from "@/messages/interfaces/Language";
-import useTranslationsFetcher from "@/messages/tranlations-fetcher";
-
-const { supportedLanguages } = require("@/messages/lang-support");
+import { Language } from "nextjs-static-page-localizer/dist/interfaces";
+import { useTranslationsFetcher } from "nextjs-static-page-localizer";
+const { supportedLanguages } = require("nextjs-static-page-localizer/lang-support");
+import { LocalizedLink, LanguageSwitcher } from "nextjs-static-page-localizer/components";
 
 export default function Header() {
 
