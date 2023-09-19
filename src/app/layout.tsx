@@ -2,6 +2,10 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import { LocalizerWrapper, Configuration } from 'nextjs-static-page-localizer'
+import { ConfigurationInterface } from 'nextjs-static-page-localizer/dist/interfaces'
+
+const config = require('@/messages/config')
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +21,8 @@ export default async function RootLayout({
   children: React.ReactNode,
   params: any
 }) {
+  
+  const configuration:ConfigurationInterface = new Configuration(config.default, config.languages, config.messages)
 
   return (
     <html>
@@ -24,11 +30,13 @@ export default async function RootLayout({
         <link rel="icon" href="/icon.jpg" />
       </head>
       <body className={inter.className + " min-h-screen flex flex-col justify-center space-between font-mono"}>
-        <Header />
-        <main className="flex flex-col items-center justify-center">
+        <LocalizerWrapper configuration={configuration}>
+          <Header />
+          <main className="flex flex-col items-center justify-center">
             {children}
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </LocalizerWrapper>
       </body>
     </html>
   )

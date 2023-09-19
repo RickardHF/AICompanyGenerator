@@ -2,7 +2,10 @@
 
 
 const nextConfig = {
-    output: "standalone"
+    output: "standalone",
+    serverRuntimeConfig: {
+        root: "root"
+    }
 }
 
 module.exports = nextConfig
