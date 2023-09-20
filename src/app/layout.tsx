@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { LocalizerWrapper, Configuration } from 'nextjs-static-page-localizer'
-import { ConfigurationInterface } from 'nextjs-static-page-localizer/dist/interfaces'
+import { ConfigurationInterface } from 'nextjs-static-page-localizer/interfaces'
 
 const config = require('@/messages/config')
 
@@ -21,8 +21,8 @@ export default async function RootLayout({
   children: React.ReactNode,
   params: any
 }) {
-  
-  const configuration:ConfigurationInterface = new Configuration(config.default, config.languages, config.messages)
+
+  const configuration: ConfigurationInterface = new Configuration(config.default, config.languages, config.messages)
 
   return (
     <html>

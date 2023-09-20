@@ -1,6 +1,6 @@
 'use client'
 
-import { Language } from "nextjs-static-page-localizer/dist/interfaces";
+import { Language } from "nextjs-static-page-localizer/interfaces";
 import { useTranslationsFetcher, useLocalization } from "nextjs-static-page-localizer";
 import { LocalizedLink, LanguageSwitcher } from "nextjs-static-page-localizer/components";
 
