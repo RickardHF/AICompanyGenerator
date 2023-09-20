@@ -1,8 +1,6 @@
 'use client'
 
-import useLanguageSetter from "@/messages/html-language-setter";
-import useMetadataSetter from "@/messages/mnetadata-setter";
-import useTranslationsFetcher from "@/messages/tranlations-fetcher";
+import { useLanguageSetter, useMetadataSetter, useTranslationsFetcher } from "nextjs-static-page-localizer"
 
 export default function About() {
     const tranlations = useTranslationsFetcher();

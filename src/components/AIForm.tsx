@@ -5,9 +5,7 @@ import "./AIForm.css";
 import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
-import useTranslationsFetcher from "@/messages/tranlations-fetcher";
-import useLanguageSetter from "@/messages/html-language-setter";
-import useMetadataSetter from "@/messages/mnetadata-setter";
+import { useTranslationsFetcher, useLanguageSetter, useMetadataSetter } from "nextjs-static-page-localizer";
 
 function AIForm() {
 

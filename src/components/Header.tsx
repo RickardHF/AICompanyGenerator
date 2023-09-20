@@ -1,14 +1,12 @@
 'use client'
 
-import LanguageSwitcher from "@/messages/components/LanguageSwitcher";
-import LocalizedLink from "@/messages/components/LocalizedLink";
-import Language from "@/messages/interfaces/Language";
-import useTranslationsFetcher from "@/messages/tranlations-fetcher";
-
-const { supportedLanguages } = require("@/messages/lang-support");
+import { Language } from "nextjs-static-page-localizer/interfaces";
+import { useTranslationsFetcher, useLocalization } from "nextjs-static-page-localizer";
+import { LocalizedLink, LanguageSwitcher } from "nextjs-static-page-localizer/components";
 
 export default function Header() {
 
+    const { configuration } = useLocalization();
     const tranlations = useTranslationsFetcher();
     const link_names = tranlations("links");
 
@@ -16,7 +14,7 @@ export default function Header() {
     <header className="flex w-full ver-flex justify-center items-center">
         <div className="flex w-full hor-flex justify-end px-10">
             {
-                supportedLanguages.map((language:Language) => {
+                configuration?.languages.map((language:Language) => {
                     return (
                         <LanguageSwitcher
                             key={language.code}
@@ -36,14 +34,14 @@ export default function Header() {
                 href="/"
                 className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one hover:underline"
                 >
-                <h2>{link_names("home")}</h2>
+                <h2>{link_names ? link_names("home") : "Err"}</h2>
             </LocalizedLink>
 
             <LocalizedLink
                 href="/about"
                 className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one hover:underline"
             >
-                <h2>{link_names("about")}</h2>
+                <h2>{link_names ? link_names("about") : "Err"}</h2>
             </LocalizedLink>
         </div>
     </header>
