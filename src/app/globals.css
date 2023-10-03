@@ -43,6 +43,15 @@ header {
   font-size: large;
 }
 
+.use-background {
+  background-color: var(--background-color);
+}
+
+.shadow-foreground {
+  filter: drop-shadow(-0.01rem -0.01rem 0.1rem var(--foreground-rgb)) 
+  drop-shadow(0.2rem 0.2rem 0.2rem var(--button-background-one));
+}
+
 .shadow-color-one {
   filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--button-background-one));
 }
