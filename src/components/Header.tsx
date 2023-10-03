@@ -1,8 +1,8 @@
 'use client'
 
-import { Language } from "nextjs-static-page-localizer/interfaces";
 import { useTranslationsFetcher, useLocalization } from "nextjs-static-page-localizer";
-import { LocalizedLink, LanguageSwitcher } from "nextjs-static-page-localizer/components";
+import { LocalizedLink } from "nextjs-static-page-localizer/components";
+import LanguageMenu from "./LanguageMenu";
 
 export default function Header() {
 
@@ -13,21 +13,7 @@ export default function Header() {
     return (
     <header className="flex w-full ver-flex justify-center items-center">
         <div className="flex w-full hor-flex justify-end px-10">
-            {
-                configuration?.languages.map((language:Language) => {
-                    return (
-                        <LanguageSwitcher
-                            key={language.code}
-                            className="flex place-items-center gap-2 lg:pointer-events-auto lg:p-0 link-item shadow-color-one px-2 hover:underline" 
-                            lang={language.code}
-                            >
-                                <h2
-                                    className="px-2"
-                                >{language.name}</h2>
-                        </LanguageSwitcher>
-                    )
-                })
-            }
+            <LanguageMenu />
         </div>
         <div className="flex hor-flex justify-around w-1/2 items-center px-8 py-4 min-w-[300px] max-w-full">
             <LocalizedLink 
