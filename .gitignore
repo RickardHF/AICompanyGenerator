@@ -11,7 +11,10 @@
 *.sln.docstates
 
 .env
-.env*
+.env.local
+.env.development
+.env.production
+.env.test
 
 package-lock.json
 .node

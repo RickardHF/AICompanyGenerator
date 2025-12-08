@@ -32,8 +32,8 @@ jobs:
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          NEXT_PUBLIC_OPENAI_API_KEY: ${{ secrets.NEXT_PUBLIC_OPENAI_API_KEY }}
-          NEXT_PUBLIC_OPENAI_ORG_ID: ${{ secrets.NEXT_PUBLIC_OPENAI_ORG_ID }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_ORG_ID: ${{ secrets.OPENAI_ORG_ID }}
           NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK: ${{ secrets.NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK }}
 
 
