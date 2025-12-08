@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import "./AIForm.css";
-import { getCompanyColors, getCompanyName, getCompanySlogan } from "@/api/openaiCommunicator";
 import ColorSquare from "./ColorSquare";
 import Loading from "./Loading";
 import { useTranslationsFetcher, useLanguageSetter, useMetadataSetter } from "nextjs-static-page-localizer";
@@ -24,6 +23,7 @@ function AIForm() {
     const [showAnswer, setShowAnswer] = useState(false);
     const [loading, setLoading] = useState(false);
     const [colorError, setColorError] = useState(false);
+    const [error, setError] = useState("");
 
     const common_names = tranlations('common');
     const home_names = tranlations('home');
@@ -32,21 +32,30 @@ function AIForm() {
         e.preventDefault();
         setShowAnswer(false);
         setColorError(false);
+        setError("");
         setLoading(true);
         try {
-            const name = await getCompanyName(description);
-            const slogan = await getCompanySlogan(name, description);
-            const colors = await getCompanyColors(description);
-            console.log(name);
-            console.log(slogan);
-            console.log(colors);
+            const response = await fetch('/api/company', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ description }),
+            });
 
-            setName(name);
-            setSlogan(slogan);
-            handleColors(colors);
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to generate company information');
+            }
+
+            const data = await response.json();
+
+            setName(data.name);
+            setSlogan(data.slogan);
+            handleColors(data.colors);
             setShowAnswer(true);
-        } catch (error) {
-            console.error(error);
+        } catch (error: any) {
+            setError(error.message || 'An error occurred. Please try again.');
         }
         setLoading(false);
     };
@@ -61,9 +70,8 @@ function AIForm() {
             if (!colors.every(value => isValidColor(value.trim()))) {
                 throw new Error("Invalid color code");
             }
-            setColors(colors);
+            setColors(colors.map(c => c.trim()));
         } catch (error) {
-            console.error(error);
             setColorError(true);
         }
     }
@@ -76,6 +84,11 @@ function AIForm() {
                 <textarea id="description" placeholder={home_names("promt")} value={description} onChange={(event) => setDescription(event.target.value)} />
                 <button className="generate-button" type="submit">{home_names("generate")}</button>
             </form>
+            {error && (
+                <div className='flex w-full ver-flex form-area-element'>
+                    <p style={{ color: 'red' }}>{error}</p>
+                </div>
+            )}
             {showAnswer &&
                 <div className='flex w-full ver-flex form-area-element'>
                     <div className='flex w-full ver-flex'>

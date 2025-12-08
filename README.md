@@ -30,9 +30,27 @@ npm run dev
 
 We use the OpenAI API. In order to use this you need to create your own subscription in order to get keys to be able to access the api. More information about the API etc. can be found [here](https://platform.openai.com/docs/api-reference/introduction).
 
-In order to successfully run this you need to create a local environment file ```.env.local``` with the following content.
+**IMPORTANT SECURITY NOTE:** This application now uses server-side API routes to protect your OpenAI API keys. Never use the `NEXT_PUBLIC_` prefix for sensitive credentials.
+
+In order to successfully run this you need to create a local environment file ```.env.local``` in the `src` folder with the following content:
 
 ```env
-NEXT_PUBLIC_OPENAI_API_KEY=<Your OpenAi API Key>
-NEXT_PUBLIC_OPENAI_ORG_ID=<Your OpenAI organization Id>
+# Server-side only (NO NEXT_PUBLIC_ prefix)
+OPENAI_API_KEY=<Your OpenAI API Key>
+OPENAI_ORG_ID=<Your OpenAI Organization Id>
+
+# Optional: Public affiliate link
+NEXT_PUBLIC_NAMECHEAP_AFFILIATE_LINK=<Your affiliate link>
 ```
+
+See `src/.env.example` for a template.
+
+## 🔒 Security Features
+
+This application implements several security measures:
+
+- **Server-side API calls**: OpenAI API keys are never exposed to the client
+- **Rate limiting**: Prevents abuse with request limits
+- **Input validation**: User input is validated and sanitized
+- **Error handling**: Errors don't expose sensitive information
+- **Prompt injection protection**: User input is sanitized before being sent to OpenAI
