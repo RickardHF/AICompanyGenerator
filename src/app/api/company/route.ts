@@ -153,23 +153,27 @@ export async function POST(request: NextRequest) {
             colors: colors
         });
 
-    } catch (error: any) {
-        console.error('API Error:', error.message);
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        console.error('API Error:', errorMessage);
         
         // Don't expose internal error details to client
-        if (error.response?.status === 429) {
-            return NextResponse.json(
-                { error: 'OpenAI API rate limit reached. Please try again later.' },
-                { status: 429 }
-            );
-        }
+        if (error && typeof error === 'object' && 'response' in error) {
+            const axiosError = error as { response?: { status?: number } };
+            if (axiosError.response?.status === 429) {
+                return NextResponse.json(
+                    { error: 'OpenAI API rate limit reached. Please try again later.' },
+                    { status: 429 }
+                );
+            }
 
-        if (error.response?.status === 401) {
-            console.error('OpenAI API authentication failed');
-            return NextResponse.json(
-                { error: 'Service authentication error' },
-                { status: 500 }
-            );
+            if (axiosError.response?.status === 401) {
+                console.error('OpenAI API authentication failed');
+                return NextResponse.json(
+                    { error: 'Service authentication error' },
+                    { status: 500 }
+                );
+            }
         }
 
         return NextResponse.json(

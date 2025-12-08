@@ -54,8 +54,9 @@ function AIForm() {
             setSlogan(data.slogan);
             handleColors(data.colors);
             setShowAnswer(true);
-        } catch (error: any) {
-            setError(error.message || 'An error occurred. Please try again.');
+        } catch (error: unknown) {
+            const errorMessage = error instanceof Error ? error.message : 'An error occurred. Please try again.';
+            setError(errorMessage);
         }
         setLoading(false);
     };
